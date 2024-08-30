@@ -1,5 +1,10 @@
 import mongoose, { Mongoose } from "mongoose";
 
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
 const MONGODB_URL = process.env.MONGODB_URL!;
 
 interface MongooseConn {
@@ -22,7 +27,7 @@ export const connect = async () => {
   cached.promise =
     cached.promise ||
     mongoose.connect(MONGODB_URL, {
-      dbName: "clerkauthv5",
+      dbName: "makeresume",
       bufferCommands: false,
       connectTimeoutMS: 30000,
     });
