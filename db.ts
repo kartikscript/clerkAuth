@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 // Load environment variables from .env file
 dotenv.config();
 
+
 const MONGODB_URL = process.env.MONGODB_URL!;
 
 interface MongooseConn {
